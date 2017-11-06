@@ -1,0 +1,59 @@
+print("Welcome to FaceSpace")
+user = input("Create a username:")
+
+while True:
+    passw = input("Create a password:")
+    passv = input("confirm password:")
+
+    if passw != passv:
+        print("passwords do not match")
+
+    if passw == passv:
+        if passw == user:
+            print("Username and Password cannot be the same try again.")
+        else:
+            break
+
+
+
+def create_profile():
+    name = input("What is your name?")
+    birthday = input("Please enter your birthyear.")
+    age = 2017 - int(birthday)
+    email = input("What is your email address?")
+    gender = input("Gender:")
+    print("Verify Your Profile")
+    print("Name: " + name)
+    print("Age: " + str(age))
+    print("Email:" + email)
+    print("Gender: " + gender)
+    use = print("Your username is " + user)
+
+
+create_profile()
+
+input("Press any button to continue")
+
+def login():
+    tries = 0
+    while tries < 5:
+        username = input("Enter your username:")
+        password = input("Enter your password:")
+
+        tries += 1
+
+        if username == user and password == passw:
+            print("Login Sucessful. Welcome " + username + " !")
+            break
+
+        if username == user and password != passw:
+            print("Password is incorrect.")
+
+        if tries < 5:
+            print("Try Again.")
+
+        if tries == 5:
+            print("Account locked. Contact you Admin.")
+            break
+
+login()
